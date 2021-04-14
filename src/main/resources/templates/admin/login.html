@@ -1,0 +1,35 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<header>
+    <link id="bootstrap-css" rel="stylesheet"
+          th:href="@{//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}">
+    <script th:src="@{//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
+    <script th:src="@{//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/admin/style.css}">
+</header>
+
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <h3 class="m-2">Administration Panel</h3>
+            <hr/>
+        </div>
+
+        <!-- Login Form -->
+        <form>
+            <input class="fadeIn second" id="login" name="login" placeholder="admin@gmail.com" type="text">
+            <input class="fadeIn third" id="password" name="login" placeholder="*******" type="text">
+            <input class="fadeIn fourth" type="submit" value="Log In">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" th:href="@{#}">Forgot Password?</a>
+        </div>
+
+    </div>
+</div>
+</html>
