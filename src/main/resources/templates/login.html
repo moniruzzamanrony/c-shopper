@@ -82,9 +82,9 @@
             <div class="col-sm-4 col-sm-offset-1">
                 <div class="login-form"><!--login form-->
                     <h2>Login to your account</h2>
-                    <form action="#">
-                        <input placeholder="Name" type="text"/>
-                        <input placeholder="Email Address" type="email"/>
+                    <form action="/auth/login_user" method="post">
+                        <input name="username" placeholder="User Name" type="text"/>
+                        <input name="password" placeholder="Password" type="Password"/>
                         <span>
 								<input class="checkbox" type="checkbox">
 								Keep me signed in
@@ -99,10 +99,13 @@
             <div class="col-sm-4">
                 <div class="signup-form"><!--sign up form-->
                     <h2>New User Signup!</h2>
-                    <form action="#">
-                        <input placeholder="Name" type="text"/>
-                        <input placeholder="Email Address" type="email"/>
-                        <input placeholder="Password" type="password"/>
+                    <form action="/auth/sign_up" method="post">
+
+                        <input  name="name" placeholder="name" type="text"/>
+                        <input name="username" placeholder="username" type="text"/>
+                        <input name="email" placeholder="Email Address" type="email"/>
+                        <input name="password" placeholder="Password" type="password"/>
+
                         <button class="btn btn-default" type="submit">Signup</button>
                     </form>
                 </div><!--/sign up form-->

@@ -1,4 +1,4 @@
-package com.itvillage.cshopper.dto.response.request;
+package com.itvillage.cshopper.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

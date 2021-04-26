@@ -28,6 +28,7 @@ public class JwtProvider {
     private int jwtExpiration;
 
     public String generateJwtToken(Authentication authentication) {
+
         final String authorities = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(","));

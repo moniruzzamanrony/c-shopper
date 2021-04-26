@@ -19,10 +19,8 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "DB_SIGN_UP")
-public class SignUp {
+public class SignUp extends BaseEntity{
 
-    @Id
-    private String id;
 
     @NotNull
     @Size(min=3, max = 50)

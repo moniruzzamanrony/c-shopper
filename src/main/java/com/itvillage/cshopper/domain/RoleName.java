@@ -1,7 +1,7 @@
 package com.itvillage.cshopper.domain;
 
 public enum RoleName {
-    TEACHER,
+    SUPER_ADMIN,
     ADMIN,
-    STUDENT
+    SUB_ADMIN
 }
