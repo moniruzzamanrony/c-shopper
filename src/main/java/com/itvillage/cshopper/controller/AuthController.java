@@ -36,11 +36,11 @@ public class AuthController {
     }
 
     @PostMapping("/login_user")
-    public ResponseEntity<?> authenticateUserLogin(@ModelAttribute LoginForm loginForm) {
+    public ModelAndView authenticateUserLogin(@ModelAttribute LoginForm loginForm) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("adminPageAfterlogin");
+        ResponseEntity.ok(authService.signIn(loginForm));
+        return modelAndView;
 
-        return  ResponseEntity.ok(authService.signIn(loginForm));
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("product-details");
-//        return modelAndView;
     }
 }

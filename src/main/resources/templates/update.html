@@ -1,0 +1,31 @@
+<tr th:each="photo : ${listall}" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+
+    <td th:text="${photo.id}">Product ID </td>
+
+    <td>    <img height="350px" width="350px" th:src="@{${photo.UserImagePath}}" />   </td>
+
+
+
+
+
+
+</tr>
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Java Inspires</title>
+</head>
+<body>
+<div align="center">
+    <br>
+    <h3>Edit Employee</h3>
+    <br>
+
+</div>
+</body>
+</html>

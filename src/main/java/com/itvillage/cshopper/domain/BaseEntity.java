@@ -27,7 +27,7 @@ public abstract class BaseEntity implements Serializable {
      * id of persisted entity.
      */
     @Id
-    private String id;
+    public String id;
 
     /**
      * Username (aka email) of creator.

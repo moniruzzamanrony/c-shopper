@@ -1,0 +1,119 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bootstrap Card</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:#007bff4f;">
+<br><br><br>
+<div class="container">
+    <h1 class="text-center">Product Details Information:</h1>
+    <hr>
+    <br>    <br>    <br>
+
+    <form th:action="@{/auth/product/save}"
+          th:object="${photo}" method="post"
+          enctype="multipart/form-data">
+
+        <tr th:each="photo : ${listall}">
+
+
+
+    <div class="container-fluid">
+
+
+        <div class="row">
+
+            <div class="col-sm-6" style="background-color:#ffffff4f;;">
+
+                <div class="container">
+                    <br>
+                    <h6>Product Image:</h6>
+                    <hr>
+
+                    <div class="card" style="background-color:#ffffff4f;">
+                        <div class="card-body text-center">
+                            <td><img height="250px" width="80%" th:src="@{${photo.UserImagePath}}"/></td>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+            </div>
+
+
+
+            <div class="col-sm-6" style="background-color:#ffffff;">
+
+                <div class="row">
+
+
+                    <div class="col-sm-2" style="background-color:#ffffff;">
+
+                    </div>
+
+                    <div class="col-sm-8" style="background-color:#ffffff;">
+                    <br>
+
+
+               <h6> Product Name:</h6>
+                <td th:text="${photo.Name}">Product Name</td>
+                <hr>
+
+                        <h6> Product Category:</h6>
+                <td th:text="${photo.category}">Product Category</td>
+                <hr>
+                        <h6> Product Description:</h6>
+                <td th:text="${photo.description}">Product Description</td>
+                <hr>
+                       <h6> Available Quantity:</h6>
+                        <td th:text="${photo.quantity}">Product Quantity</td>
+                <hr>
+
+
+                        <h6> Product Price:</h6>
+                        <td th:text="${photo.price}">Product Price</td>
+
+
+
+
+
+
+
+
+
+
+
+                    <div style="margin-top: 15px" align="center">
+                        <button type="button" style= "font-weight: bold; color: #3c763d">Order Now!!</button>
+                    </div>
+                        <hr>
+                        <br>
+
+                    </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+        </div>
+    </div>
+        </tr>
+    </form>
+</div>
+
+</body>
+</html>
