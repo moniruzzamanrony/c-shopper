@@ -83,6 +83,22 @@ public class ProductController {
     }
 
 
+
+
+
+
+    @GetMapping("/ordernow/{id}")
+    public ModelAndView ordernow(HttpServletRequest request,@RequestParam String id)
+    {
+
+        ModelAndView modelAndView = new ModelAndView();
+        request.setAttribute("listall", productService.findAllById(id));
+
+        modelAndView.setViewName("order");
+
+        return modelAndView;
+    }
+
     @GetMapping("/productview/{id}")
     public ModelAndView getHomePage(HttpServletRequest request,@RequestParam String id)
     {

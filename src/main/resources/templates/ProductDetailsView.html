@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,10 +13,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
-<body style="background-color:#007bff4f;">
+<body style="background-color:#66757F;">
 <br><br><br>
 <div class="container">
-    <h1 class="text-center">Product Details Information:</h1>
+
+    <div style="margin-top: 15px" align="center">
+        </br>
+        <a style="font-size: xx-large" href="#" class="btn btn-info btn-lg">
+            <span class="glyphicon glyphicon-shopping-cart"></span> Product Details Information
+        </a>
+    </div>
     <hr>
     <br>    <br>    <br>
 
@@ -30,13 +37,13 @@
     <div class="container-fluid">
 
 
-        <div class="row">
+        <div class="row" >
 
-            <div class="col-sm-6" style="background-color:#ffffff4f;;">
+            <div class="col-sm-6" style="background-color:#ffffff4f;border-radius: 16px">
 
-                <div class="container">
+                <div class="container" >
                     <br>
-                    <h6>Product Image:</h6>
+                    <h6 style="font-size: x-large">Product Image:</h6>
                     <hr>
 
                     <div class="card" style="background-color:#ffffff4f;">
@@ -52,12 +59,12 @@
 
 
 
-            <div class="col-sm-6" style="background-color:#ffffff;">
+            <div class="col-sm-6" style="background-color:#ffffff;border-radius: 16px">
 
-                <div class="row">
+                <div class="row" style="">
 
 
-                    <div class="col-sm-2" style="background-color:#ffffff;">
+                    <div class="col-sm-2" style="background-color:#ffffff;border-radius: 12px">
 
                     </div>
 
@@ -94,7 +101,14 @@
 
 
                     <div style="margin-top: 15px" align="center">
-                        <button type="button" style= "font-weight: bold; color: #3c763d">Order Now!!</button>
+                      </br>
+                        <a th:href="@{/auth/ordernow/id(id=${photo.id})}" class="btn btn-info btn-lg">
+                            <span class="glyphicon glyphicon-shopping-cart"></span> Order Now!!
+
+                        </a>
+
+
+
                     </div>
                         <hr>
                         <br>

@@ -1,0 +1,80 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #666699">
+
+<div class="container">
+    <br>
+    <button type="button" class="btn btn-warning">C-Shopper</button>
+    <hr>
+
+    <div class="card">
+        <div class="card-header">
+
+            <button type="button" class="btn btn-success">My Cart</button></div>
+        <div class="card-body">
+
+
+            <div class="text-center container">
+                <form th:action="@{/auth/product/save}"
+                      th:object="${photo}" method="post"
+                      enctype="multipart/form-data">
+
+                    <tr th:each="photo : ${listall}">
+
+
+
+                        <td><img height="150px" width="150px" th:src="@{${photo.UserImagePath}}"/></td>
+                        <hr>
+                        <h6> Product Name:</h6>
+                        <td th:text="${photo.Name}">Product Name</td>
+                        <hr>
+
+                        <h6> Product Category:</h6>
+                        <td th:text="${photo.category}">Product Category</td>
+                        <hr>
+                        <h6> Product Description:</h6>
+                        <td th:text="${photo.description}">Product Description</td>
+                        <hr>
+
+
+
+
+                        <h6> Product Price:</h6>
+
+                        <td th:text="${photo.price}">Product Price</td><span> tk * <input type="text" id="fname" name="fname">  Per Pieces<br><br></span>
+                        <hr>
+
+                        <label for="fname">Total:</label>
+                        <input type="text" id="fname" name="fname"><br><br>
+
+                    </tr>
+                </form>
+            </div>
+
+
+
+        </div>
+        <div class="card-footer text-center">
+
+            <button type="button" class="btn btn-danger">Proceed to checkout</button>
+
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+</html>
