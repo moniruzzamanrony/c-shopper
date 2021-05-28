@@ -37,9 +37,7 @@
 
 
             <div class="text-center container">
-                <form th:action="@{/auth/product/save}"
-                      th:object="${photo}" method="post"
-                      enctype="multipart/form-data">
+                <form action="/auth/send/email" method="post">
 
                     <tr th:each="photo : ${listall}">
 
@@ -58,18 +56,6 @@
                         <td th:text="${photo.description}">Product Description</td>
                         <hr>
 
-
-
-
-                        <h6> Product Price:</h6>
-
-                        <td th:text="${photo.price}">Product Price  </td><span>* <input type="text" id="fname" name="fname">  <br><br></span>
-                        <hr>
-
-                        <label for="fname">Total:</label>
-                        <input type="text" id="fname" name="fname"><br><br>
-
-                    </tr>
                 </form>
             </div>
 
@@ -85,28 +71,44 @@
 
                             <button style="font-size: x-large" class="btn btn-success text-center">User Information</button>
 
-<hr>                         <form>
+<hr>                         <form action="/auth/send/email" method="post">
 
                             <div class="form-group">
-                                <label for="exampleInputPassword1">User Name:</label>
-                                <input type="text" class="form-control" id="username" placeholder="Enter User Name" required>
+                                <label for="username">User Name:</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter User Name" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputPassword1">User Address:</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter User Address" required>
+                                <label for="exampleInputAddress">User Address:</label>
+                                <input type="text" class="form-control" id="exampleInputAddress" name="exampleInputAddress" placeholder="Enter User Address" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputPassword1">User Phone/Mobile:</label>
-                                <input type="text" class="form-control" id="Phone" placeholder="Enter User Phone/Mobile" required>
+                                <label for="Phone">User Phone/Mobile:</label>
+                                <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Enter User Phone/Mobile" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">User Email </label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter User Email" required>
+                                <input type="email" class="form-control" id="exampleInputEmail1"  name="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter User Email" required>
 
                             </div>
+
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Product Price: </label>
+                                <input type="text" class="form-control" id="productPrice"  name="productPrice" aria-describedby="emailHelp" placeholder="Enter Product Price" required>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Total: </label>
+                                <input type="text" class="form-control" id="productTotal"  name="productTotal" aria-describedby="emailHelp" placeholder="Enter Product Total" required>
+
+                            </div>
+
+
+                            </tr>
 
 
                             <hr>
