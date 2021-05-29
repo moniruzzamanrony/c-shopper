@@ -55,7 +55,8 @@
                         <h6> Product Description:</h6>
                         <td th:text="${photo.description}">Product Description</td>
                         <hr>
-
+                        <h6> Product Price:</h6>
+                        <td th:text="${photo.price}">Product Description</td>
                 </form>
             </div>
 
@@ -96,7 +97,9 @@
 
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Product Price: </label>
+
+
+                                <label for="exampleInputEmail1">Product Quantity: </label>
                                 <input type="text" class="form-control" id="productPrice"  name="productPrice" aria-describedby="emailHelp" placeholder="Enter Product Price" required>
 
                             </div>
@@ -130,7 +133,7 @@
 
         <div class="card-footer text-center">
 
-            <button type="button" class="btn btn-danger">Proceed to checkout</button>
+
 
 
 

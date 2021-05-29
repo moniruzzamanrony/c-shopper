@@ -9,18 +9,17 @@ import com.itvillage.cshopper.services.ProductService;
 import com.itvillage.cshopper.util.FileUploadUtil;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
-import org.springframework.validation.BindingResult;
+
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
+
 import java.io.IOException;
 import java.util.UUID;
 
@@ -113,16 +112,16 @@ public class ProductController {
 
 
 
-    /*   @GetMapping("/h")
+    @GetMapping("/h")
     public ModelAndView getHomePage(HttpServletRequest request)
     {
         ModelAndView modelAndView = new ModelAndView();
         request.setAttribute("listall", productService.show());
 
-        modelAndView.setViewName("ProductDetailsView");
+        modelAndView.setViewName("Delete");
 
         return modelAndView;
-    }*/
+    }
 
 
     @GetMapping("/productview")
@@ -150,6 +149,14 @@ public class ProductController {
         modelAndView.setViewName("update");
 
         return modelAndView;
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteUser(@PathVariable("id") String id, Model model) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+        productRepository.delete(product);
+        return "redirect:/index";
     }
 
 

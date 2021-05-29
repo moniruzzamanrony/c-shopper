@@ -36,6 +36,14 @@ public class AuthController {
     }
 
 
+    @GetMapping("/reg")
+    public ModelAndView reg() {
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("Registration");
+        return modelAndView;
+    }
+
     @PostMapping("/sign_up")
     public ModelAndView authenticateUserSignUp(@ModelAttribute SignUpForm signUpForm) {
 

@@ -5,189 +5,68 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <title>C-Shopper</title>
 
-    <!--Header Css And Js Part-->
-    <link rel="stylesheet" th:href="@{/styles/home.css}"/>
-    <link rel="stylesheet" th:href="@{/js/home.css}"/>
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
-    <link rel="stylesheet" th:href="@{/css/prettyPhoto.css}">
-    <link rel="stylesheet" th:href="@{/css/price-range.css}">
-    <link rel="stylesheet" th:href="@{/css/animate.css}">
-    <link rel="stylesheet" th:href="@{/css/main.css}">
-    <link rel="stylesheet" th:href="@{/css/responsive.css}">
-    <!--[if lt IE 9]>
-    <script th:src="@{/js/html5shiv.js}"></script>
-    <script th:src="@{/js/respond.min.js}"></script>
-    <![endif]-->
-    <link href="images/ico/favicon.ico" rel="shortcut icon">
-    <link sizes="144x144" th:href="@{/images/ico/apple-touch-icon-144-precomposed.png}">
-    <link sizes="114x114" th:href="@{/images/ico/apple-touch-icon-114-precomposed.png}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" th:href="@{/images/ico/apple-touch-icon-72-precomposed.png}">
-    <link rel="apple-touch-icon-precomposed" th:href="@{/images/ico/apple-touch-icon-57-precomposed.png}">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #17a2b8;
+            height: 100vh;
+        }
+        #login .container #login-row #login-column #login-box {
+            margin-top: 120px;
+            max-width: 600px;
+            height: 320px;
+            border: 1px solid #9C9C9C;
+            background-color: #EAEAEA;
+        }
+        #login .container #login-row #login-column #login-box #login-form {
+            padding: 20px;
+        }
+        #login .container #login-row #login-column #login-box #login-form #register-link {
+            margin-top: -85px;
+        }
+
+    </style>
 </head>
 
 <body>
-<div class="container">
-
-    <header id="header"><!--header-->
-        <div class="header_top"><!--header_top-->
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="contactinfo">
-                            <ul class="nav nav-pills">
-                                <li><a href="#"><i class="fa fa-phone"></i> +8801909596760</a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i> cshopper072@gmail.com</a></li>
-                            </ul>
+<div id="login">
+    <h3 class="text-center text-white pt-5">Login Form</h3>
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form id="login-form" class="form" action="/auth/login_user" method="post" >
+                        <h3 class="text-center text-info">Login</h3>
+                        <div class="form-group">
+                            <label for="username" class="text-info">Username:</label><br>
+                            <input type="text" name="username" id="username" class="form-control">
                         </div>
-                    </div>
-
-                </div>
-            </div>
-        </div><!--/header_top-->
-
-        <div class="header-middle"><!--header-middle-->
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-sm">
-                        <div class="shop-menu pull-right">
-                            <ul class="nav navbar-nav">
-                                <li><a th:href="@{login}"><i class="fa fa-user"></i> Account</a></li>
-                                <li><a th:href="@{login}"><i class="fa fa-lock"></i> Login</a></li>
-                            </ul>
+                        <div class="form-group">
+                            <label for="password" class="text-info">Password:</label><br>
+                            <input type="text" name="password" id="password" class="form-control">
                         </div>
-                    </div>
-                    <br><br><br>
-                    <div class="logo pull-left">
-                        <button type="button" class="btn btn-warning text-center" style="width:150px ;height: auto; font-size: x-large ;">C-Shopper</button>
-                    </div>
-
-                </div>
-            </div>
-        </div><!--/header-middle-->
-
-    </header><!--/header-->
-    <section id="form"><!--form-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 col-sm-offset-1">
-                    <div class="login-form"><!--login form-->
-                        <h2>Login to your account</h2>
-                        <form action="/auth/login_user" method="post">
-                            <input name="username" placeholder="User Name" type="text"/>
-                            <input name="password" placeholder="Password" type="Password"/>
-                            <span>
-								<input class="checkbox" type="checkbox">
-								Keep me signed in
-							</span>
-                            <button class="btn btn-default" type="submit">Login</button>
-                        </form>
-                    </div><!--/login form-->
-                </div>
-                <div class="col-sm-1">
-                    <h2 class="or">OR</h2>
-                </div>
-                <div class="col-sm-4">
-                    <div class="signup-form"><!--sign up form-->
-                        <h2>New User Signup!</h2>
-                        <form action="/auth/sign_up" method="post">
-
-                            <input  name="name" placeholder="name" type="text"/>
-                            <input name="username" placeholder="username" type="text"/>
-                            <input name="email" placeholder="Email Address" type="email"/>
-                            <input name="password" placeholder="Password" type="password"/>
-
-                            <button class="btn btn-default" type="submit">Signup</button>
-                        </form>
-                    </div><!--/sign up form-->
+                        <div class="form-group">
+                            <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                            <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                        </div>
+                        <div id="register-link" class="text-right">
+                            <button type="button" class="btn btn-warning">C-Shopper</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </section><!--/form-->
-
-    <footer id="footer" style="background-color: #C0C0C0"><!--Footer-->
-
-
-        <div class="footer-widget">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-2">
-                        <div class="single-widget">
-                            <h2>Service</h2>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Online Help</a></li>
-                                <li><a href="#">Contact Us</a></li>
-
-
-
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-2">
-                        <div class="single-widget">
-                            <h2>Policies</h2>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Terms of Use</a></li>
-                                <li><a href="#">Privecy Policy</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="single-widget">
-                            <h2>About Shopper</h2>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Company Information</a></li>
-
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-sm-offset-1">
-                        <div class="single-widget">
-                            <h2>About Shopper</h2>
-                            <form action="#" class="searchform">
-                                <input type="text" placeholder="Your email address" />
-                                <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
-                                <p>Get the most recent updates from <br />our site and be updated your self...</p>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <p class="pull-left">Copyright © 2021 C-SHOPPER Inc. All rights reserved.</p>
-
-                </div>
-            </div>
-        </div>
-
-    </footer><!--/Footer-->
-
+    </div>
 </div>
-
-
-<!--JS Part-->
-<script th:src="@{/js/jquery.js}" type="text/javascript"></script>
-<script th:src="@{/js/bootstrap.min.js}" type="text/javascript"></script>
-<script th:src="@{/js/jquery.scrollUp.min.js}" type="text/javascript"></script>
-<script th:src="@{/js/price-range.js}" type="text/javascript"></script>
-<script th:src="@{/js/jquery.prettyPhoto.js}" type="text/javascript"></script>
-<script th:src="@{/js/main.js}" type="text/javascript"></script>
-
 </body>
+
+
 </html>
+
+
+
